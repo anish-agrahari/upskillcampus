@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">🔗 Python URL Shortener</h2>
+
+    <form method="POST" class="card p-4 shadow-sm">
+        <div class="mb-3">
+            <input type="url" name="original_url" class="form-control" placeholder="Enter your long URL" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Shorten URL</button>
+    </form>
+
+    {% if short_url %}
+        <div class="alert alert-success mt-4 text-center">
+            Shortened URL: <a href="{{ short_url }}" target="_blank">{{ short_url }}</a>
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
